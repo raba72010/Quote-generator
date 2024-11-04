@@ -1,29 +1,71 @@
-async function getQuote() {
-    const quoteElement = document.getElementById('quote');
-    quoteElement.textContent = 'Loading...';
+// Updated JavaScript code to load quotes from an external JSON file
 
-    try {
-        // Using quotable API as primary source
-        const response = await fetch('https://api.quotable.io/random');
-        if (response.ok) {
-            const data = await response.json();
-            quoteElement.textContent = `"${data.content}" - ${data.author}`;
-            return;
-        }
-    } catch (error) {
-        console.error('Primary API failed:', error);
+// Function to load the quotes JSON file
+async function loadQuotes() {
+  try {
+    const response = await fetch('quotes.json');
+    if (!response.ok) {
+      throw new Error('Failed to load quotes JSON file');
     }
-
-    // Fallback to local quotes if API fails
-    const randomQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
-    quoteElement.textContent = `"${randomQuote.content}" - ${randomQuote.author}`;
+    const quotesData = await response.json();
+    return quotesData;
+  } catch (error) {
+    console.error('Error loading quotes JSON file:', error);
+    document.getElementById('quote').innerText = 'Failed to load quotes. Please try again later.';
+  }
 }
 
-// Add more fallback quotes
-fallbackQuotes.push(
-    { content: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
-    { content: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
-    { content: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
-    { content: "In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
-    { content: "The only impossible journey is the one you never begin.", author: "Tony Robbins" }
-);
+// Function to fetch a new quote from the loaded JSON data
+async function newQuote() {
+  try {
+    const quotesData = await loadQuotes();
+    if (!quotesData) {
+      throw new Error('Quotes data is unavailable');
+    }
+
+    // Get a random category
+    const randomCategoryIndex = Math.floor(Math.random() * quotesData.categories.length);
+    const randomCategory = quotesData.categories[randomCategoryIndex];
+
+    // Get a random quote from that category
+    const randomQuoteIndex = Math.floor(Math.random() * randomCategory.quotes.length);
+    const randomQuote = randomCategory.quotes[randomQuoteIndex];
+
+    // Display the quote
+    document.getElementById('quote').innerText = `"${randomQuote}" – ${randomCategory.category}`;
+  } catch (error) {
+    console.error('Error fetching new quote:', error);
+    document.getElementById('quote').innerText = 'Failed to fetch a new quote. Please try again later.';
+  }
+}
+
+// Function to share the current quote
+function shareQuote() {
+  const quote = document.getElementById('quote').innerText;
+  if (navigator.share) {
+    navigator.share({
+      title: 'Inspirational Quote',
+      text: quote,
+    }).catch(() => console.log("Sharing failed or was canceled by the user."));
+  } else {
+    console.log("Sharing not supported on this browser.");
+  }
+}
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  // Save dark mode preference in local storage
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    localStorage.removeItem('darkMode');
+  }
+}
+
+// Check local storage for dark mode preference
+window.onload = async () => {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+};

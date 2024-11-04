@@ -1,0 +1,79 @@
+{
+  "categories": [
+    {
+      "category": "Motivation",
+      "quotes": [
+        "Believe in yourself and all that you are.",
+        "The secret of getting ahead is getting started.",
+        "Don’t watch the clock; do what it does. Keep going.",
+        "Act as if what you do makes a difference. It does.",
+        "With the new day comes new strength and new thoughts.",
+        "The future belongs to those who believe in the beauty of their dreams.",
+        "It always seems impossible until it’s done.",
+        "The best way to predict the future is to create it.",
+        "Don’t wait for opportunity. Create it.",
+        "Everything you can imagine is real."
+      ]
+    },
+    {
+      "category": "Happiness",
+      "quotes": [
+        "Happiness is not something ready-made. It comes from your own actions.",
+        "For every minute you are angry you lose sixty seconds of happiness.",
+        "Happiness depends upon ourselves.",
+        "The purpose of our lives is to be happy.",
+        "Happiness is the highest good.",
+        "There is no path to happiness; happiness is the path.",
+        "Happiness is when what you think, what you say, and what you do are in harmony.",
+        "The most simple things can bring the most happiness.",
+        "Happiness is a state of mind.",
+        "Doing what you like is freedom. Liking what you do is happiness."
+      ]
+    },
+    {
+      "category": "Love",
+      "quotes": [
+        "Where there is love there is life.",
+        "Love all, trust a few, do wrong to none.",
+        "We are most alive when we’re in love.",
+        "Love is not about possession. Love is about appreciation.",
+        "The best thing to hold onto in life is each other.",
+        "To love and be loved is to feel the sun from both sides.",
+        "Love is composed of a single soul inhabiting two bodies.",
+        "Being deeply loved by someone gives you strength.",
+        "The greatest thing you’ll ever learn is to love and be loved in return.",
+        "Love recognizes no barriers."
+      ]
+    },
+    {
+      "category": "Success",
+      "quotes": [
+        "Success is not the key to happiness. Happiness is the key to success.",
+        "Success usually comes to those who are too busy to be looking for it.",
+        "Opportunities don't happen. You create them.",
+        "Success is the sum of small efforts repeated day in and day out.",
+        "The road to success is always under construction.",
+        "Don’t be afraid to give up the good to go for the great.",
+        "Success is walking from failure to failure with no loss of enthusiasm.",
+        "Success is liking yourself, liking what you do, and liking how you do it.",
+        "The harder the conflict, the greater the triumph.",
+        "Success is not in what you have, but who you are."
+      ]
+    },
+    {
+      "category": "Wisdom",
+      "quotes": [
+        "The only true wisdom is in knowing you know nothing.",
+        "Wisdom begins in wonder.",
+        "The journey of a thousand miles begins with one step.",
+        "Turn your wounds into wisdom.",
+        "It is not length of life, but depth of life.",
+        "The only limit to our realization of tomorrow is our doubts of today.",
+        "The invariable mark of wisdom is to see the miraculous in the common.",
+        "Knowledge speaks, but wisdom listens.",
+        "The wise man knows he knows nothing.",
+        "Wisdom is the reward you get for a lifetime of listening when you would have rather talked."
+      ]
+    }
+  ]
+}
